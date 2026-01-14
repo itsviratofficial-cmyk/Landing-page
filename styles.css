@@ -1,0 +1,44 @@
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --text: #e6eef8;
+  --muted: #9fb3c8;
+  --accent: #00d4ff;
+  --accent-2: #ff6b6b;
+  --max-width: 1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+body{background:linear-gradient(180deg,var(--bg) 0%, #071023 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-size:1.125rem}
+.nav{display:none}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.nav a{color:var(--muted);text-decoration:none;padding:0.5rem}
+.nav a:hover{color:var(--text)}
+.nav-toggle{background:none;border:0;color:inherit;cursor:pointer;padding:0.5rem}
+.hamburger{display:block;width:22px;height:2px;background:var(--text);position:relative}
+.hamburger::after,.hamburger::before{content:'';position:absolute;left:0;width:22px;height:2px;background:var(--text)}
+.hamburger::before{top:-7px}
+.hamburger::after{top:7px}
+.hero{padding:4rem 0;text-align:center}
+.hero h1{font-size:clamp(1.5rem,4vw,3rem);margin:0 0 0.5rem}
+.lead{color:var(--muted);max-width:42ch;margin:0.25rem auto 1rem}
+.cta-row{display:flex;gap:0.75rem;justify-content:center}
+.btn{display:inline-block;padding:0.65rem 1rem;border-radius:8px;text-decoration:none;border:1px solid transparent}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042233;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text)}
+.features{padding:2.5rem 0}
+.feature-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem;margin-top:1rem}
+.feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:1rem;border-radius:10px}
+.feature h3{margin:0 0 0.5rem}
+.about{padding:1.5rem 0}
+.contact{padding:1.5rem 0;border-top:1px solid rgba(255,255,255,0.03)}
+.site-footer{padding:1.5rem 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+@media(min-width:700px){
+  .nav{display:block}
+  .nav-toggle{display:none}
+  .feature-grid{grid-template-columns:repeat(3,1fr)}
+  .hero{padding:6rem 0}
+}
